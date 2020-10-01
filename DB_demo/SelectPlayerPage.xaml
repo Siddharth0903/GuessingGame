@@ -1,0 +1,95 @@
+﻿<Page
+    x:Class="Assignment2.SelectPlayerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Assignment2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel>
+        <!--Title: Select Player-->
+
+        <TextBlock Grid.Row="0"
+                   Text="Select Player"
+                   FontSize="35"
+                   FontWeight="Bold"
+                   Margin="30"
+                   Width="730"
+                   HorizontalAlignment="Center" />
+        <Grid>
+            <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    RenderTransformOrigin="0.489,0.494"
+                    Margin="0,0,31,159">
+
+            <Grid Width="500"
+                  Height="194">
+                <Grid.RowDefinitions>
+                    <!--3 Rows -->
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="1*" />
+                    
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <!-- 2 Columns -->
+                    <ColumnDefinition Width="Auto"
+                                      MinWidth="150" />
+                        <ColumnDefinition Width="Auto"
+                                          MinWidth="107" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Text: Select Player 1 -->
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="0"
+                               Text="Select Player 1"
+                               Margin="0,20,0,50"
+                               Grid.RowSpan="2"
+                               FontSize="23" />
+
+                    <!-- Text: Select Player 2 -->
+                    <TextBlock Grid.Row="1"
+                           Grid.Column="0"
+                           Text="Select Player 2"
+                           Margin="0,26,0,-26"
+                           FontSize="23" />
+
+                    <!-- Button : Select -->
+                    <Button Grid.Row="2"
+                        Grid.Column="2"
+                        Style="{StaticResource MainButtonStyle}"
+                        HorizontalAlignment="Center"
+                        x:Name="SelectButton"
+                        Content="Select"
+                        Height="45"
+                        Width="120"
+                        Click="SelectButton_Click" />
+                
+                
+                        <!-- ComboBox : Player 1-->
+                    <ComboBox x:Name="ComboBoxPlayer1"
+                              Grid.Column="1"
+                              Margin="56,20,0,0"
+                              Width="226"
+                              Grid.ColumnSpan="2"
+                              Height="40"
+                               />
+
+                    <!-- ComboBox : Player 2-->
+                    <ComboBox  x:Name="ComboBoxPlayer2"
+                           Width="226"
+                           Height="40"
+                           Grid.ColumnSpan="2"
+                           Grid.Column="1"
+                           Margin="56,0,0,0"
+                           Grid.Row="1"
+                           VerticalAlignment="Center"
+                            />
+
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</Page>

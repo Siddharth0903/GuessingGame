@@ -1,0 +1,120 @@
+﻿<Page x:Class="Assignment2.ScoreboardPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:Assignment2"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel HorizontalAlignment="Center">
+
+        <!--Title: Add Player-->
+        <TextBlock Grid.Row="0"
+                   Text="Add Player"
+                   FontSize="35"
+                   FontWeight="Bold"
+                   Margin="30"
+                   Width="730"
+                   HorizontalAlignment="Center" />
+        <Grid>
+            <!--Display Table-->
+            <RelativePanel HorizontalAlignment="Center">
+                <ListView Name="playersList"
+                          SelectionMode="Single"
+                          HorizontalAlignment="Center"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          ScrollViewer.IsVerticalRailEnabled="True"
+                          ScrollViewer.VerticalScrollMode="Enabled"
+                          ScrollViewer.HorizontalScrollMode="Enabled"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                          ScrollViewer.IsHorizontalRailEnabled="True"
+                          Margin="20">
+                    <!--    Header -->
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        Background="DodgerBlue"
+                                        BorderThickness="2"
+                                        BorderBrush="Gray"
+                                        CornerRadius="2"
+                                        Padding="10">
+                                <!--Heading: PlayerName-->
+                                <TextBlock Text="PlayerName"
+                                           Width="200"
+                                           Foreground="White" />
+                                
+                                <!--Heading: Wins -->
+                                <TextBlock Text="Wins"
+                                           Width="100"
+                                           Foreground="White" />
+
+                                <!--Heading: Loss -->
+                                <TextBlock Text="Loss"
+                                           Width="100"
+                                           Foreground="White" />
+
+                                <!--Heading: Tie -->
+                                <TextBlock Text="Tie"
+                                           Width="100"
+                                           Foreground="White" />
+
+
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+
+                    <!-- TableData -->
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="local:Player">
+                            <StackPanel Orientation="Horizontal"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Right"
+                                        BorderThickness="1"
+                                        BorderBrush="Gray"
+                                        CornerRadius="2"
+                                        Padding="10">
+                                <!-- TableData : PlayerName-->
+                                <TextBlock Name="name"
+                                           Text="{x:Bind name}"
+                                           Width="200" />
+
+                                <!-- TableData : Wins-->
+                                <TextBlock Name="wins"
+                                           Text="{x:Bind wins}"
+                                           Width="100" />
+
+                                <!-- TableData : Loss-->
+                                <TextBlock Name="losses"
+                                           Text="{x:Bind losses}"
+                                           Width="100" />
+
+                                <!-- TableData : Tie-->
+                                <TextBlock Name="ties"
+                                           Text="{x:Bind ties}"
+                                           Width="100" />
+
+
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </RelativePanel>
+
+
+        </Grid>
+        <Grid HorizontalAlignment="Right"
+                  VerticalAlignment="Bottom">
+            <!-- Button Start Game -->
+                <Button x:Name="SelectButton"
+                    Style="{StaticResource MainButtonStyle}"
+                    Content="StartGame"
+                        Height="45"
+                        Width="120"
+                        Click="SelectButton_Click" />
+            </Grid>
+        
+    </StackPanel>
+</Page>
